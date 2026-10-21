@@ -1,0 +1,1 @@
+This wrapper is an independent adaptation inspired by Anthropic's canvas-design skill. The bundled Work Sans font files are modified copies from that skill, identified by the Work Sans copyright notice and changed only in packaging; see WorkSans-OFL.txt for their SIL OFL terms.

@@ -1,0 +1,1 @@
+This wrapper incorporates portions of Anthropic's slack-gif-creator under Apache License 2.0. These files are modified for qwen-slack-gif-creator: renderer input-schema integration, portable bundled font loading, and wrapper instructions. See LICENSE.txt and core/NOTICE.txt.
