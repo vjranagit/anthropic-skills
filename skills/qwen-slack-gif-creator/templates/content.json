@@ -1,0 +1,20 @@
+{
+  "title": "The water cycle",
+  "groups": [
+    {"name": "Sea", "items": ["Ocean"]},
+    {"name": "Sky", "items": ["Water vapour", "Clouds", "Rain and snow"]},
+    {"name": "Land", "items": ["Rivers", "Groundwater"]}
+  ],
+  "links": [
+    ["Ocean", "Water vapour"], ["Water vapour", "Clouds"], ["Clouds", "Rain and snow"],
+    ["Rain and snow", "Rivers"], ["Rain and snow", "Groundwater"],
+    ["Rivers", "Ocean"], ["Groundwater", "Ocean"]
+  ],
+  "steps": [
+    {"on": ["Ocean", "Water vapour"], "note": "Sun heats the sea; water evaporates"},
+    {"on": ["Clouds"], "note": "Vapour cools and condenses into clouds"},
+    {"on": ["Rain and snow"], "note": "Droplets grow and fall as rain or snow"},
+    {"on": ["Rivers", "Groundwater"], "note": "At the same time water runs off and soaks in"},
+    {"on": ["Ocean"], "note": "Both flows return to the sea"}
+  ]
+}
