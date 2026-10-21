@@ -1,0 +1,40 @@
+{
+  "movement": "Render Atlas",
+  "title": "Blender Cycles Path Tracer Inside",
+  "subtitle": "How BVH traversal, BSDF sampling and MIS turn rays into pixels",
+  "groups": [
+    {"name": "Scene data", "parts": [
+      {"name": "BVH acceleration", "note": "Prunes scene to few triangles per ray"},
+      {"name": "Primitive intersection", "note": "Triangles, hair, curves and volume steps hit by rays"}
+    ]},
+    {"name": "Ray tracing", "parts": [
+      {"name": "Primary camera ray", "note": "One path per pixel begins here from the camera"},
+      {"name": "Shadow ray", "note": "Cheap occlusion test from shading point to each light"}
+    ]},
+    {"name": "Light transport", "parts": [
+      {"name": "BSDF sampling", "note": "Cosine diffuse and GGX specular"},
+      {"name": "Next event estimate", "note": "Direct light sampling kills variance"},
+      {"name": "MIS", "note": "Weights path and light samples to one sum"},
+      {"name": "Bounce budget", "note": "Max bounces per ray type: diffuse, glossy, vol"}
+    ]},
+    {"name": "Convergence", "parts": [
+      {"name": "Render passes", "note": "Diffuse, glossy, AO, emission, shadow splits for comp"},
+      {"name": "OptiX denoiser", "note": "AI filter removes residual noise, low samples suffice"}
+    ]}
+  ],
+  "links": [
+    {"from": "Primary camera ray", "to": "BVH acceleration", "label": "traverses"},
+    {"from": "BVH acceleration", "to": "Primitive intersection", "label": "prunes to"},
+    {"from": "Primitive intersection", "to": "BSDF sampling", "label": "hit spawns"},
+    {"from": "BSDF sampling", "to": "BVH acceleration", "label": "bounce ray"},
+    {"from": "Primitive intersection", "to": "Shadow ray", "label": "per light"},
+    {"from": "Shadow ray", "to": "BVH acceleration", "label": "occlusion"},
+    {"from": "Primitive intersection", "to": "Next event estimate", "label": "direct term"},
+    {"from": "BSDF sampling", "to": "MIS", "label": "contribution"},
+    {"from": "Next event estimate", "to": "MIS", "label": "contribution"},
+    {"from": "Bounce budget", "to": "BSDF sampling", "label": "caps depth"},
+    {"from": "MIS", "to": "Render passes", "label": "accumulates"},
+    {"from": "Render passes", "to": "OptiX denoiser", "label": "feeds"}
+  ],
+  "takeaway": "BVH makes rays cheap, MIS makes them right, the denoiser makes few enough"
+}

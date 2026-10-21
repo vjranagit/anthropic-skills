@@ -1,0 +1,1 @@
+This directory contains portions of Anthropic's slack-gif-creator, modified for the qwen-slack-gif-creator wrapper. Modifications: wrapper input schema integration and bundled local font support. Licensed under Apache-2.0; see LICENSE.txt.

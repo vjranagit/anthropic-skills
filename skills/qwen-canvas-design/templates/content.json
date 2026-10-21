@@ -1,0 +1,12 @@
+{
+  "movement": "Technical editorial",
+  "title": "A system of connected ideas",
+  "subtitle": "A compact map of causes and effects",
+  "takeaway": "Separate parts and links make complex systems easier to inspect.",
+  "groups": [
+    {"name": "Inputs", "parts": [{"name": "Question", "note": "A clear topic sets the scope"}, {"name": "Evidence", "note": "Facts describe the system"}]},
+    {"name": "Model", "parts": [{"name": "Parts", "note": "Distinct components have roles"}, {"name": "Links", "note": "Relations connect components"}]},
+    {"name": "Outcome", "parts": [{"name": "Map", "note": "A visual summarizes the system"}]}
+  ],
+  "links": [{"from": "Question", "to": "Parts", "label": "defines"}, {"from": "Evidence", "to": "Parts", "label": "describes"}, {"from": "Parts", "to": "Links", "label": "relate"}, {"from": "Links", "to": "Map", "label": "form"}]
+}
